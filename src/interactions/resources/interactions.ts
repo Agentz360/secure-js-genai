@@ -883,7 +883,7 @@ export interface GenerationConfig {
   /**
    * The tool choice for the interaction.
    */
-  tool_choice?: ToolChoice;
+  tool_choice?: ToolChoiceType | ToolChoiceConfig;
 
   /**
    * The maximum cumulative probability of tokens to consider when sampling.
@@ -1403,13 +1403,11 @@ export namespace Tool {
 }
 
 /**
- * The configuration for tool choice.
+ * The tool choice configuration containing allowed tools.
  */
-export type ToolChoice = ToolChoiceType | ToolChoiceConfig;
-
 export interface ToolChoiceConfig {
   /**
-   * The configuration for allowed tools.
+   * The allowed tools.
    */
   allowed_tools?: AllowedTools;
 }
@@ -1964,7 +1962,6 @@ export declare namespace Interactions {
     type ThinkingLevel as ThinkingLevel,
     type ThoughtContent as ThoughtContent,
     type Tool as Tool,
-    type ToolChoice as ToolChoice,
     type ToolChoiceConfig as ToolChoiceConfig,
     type ToolChoiceType as ToolChoiceType,
     type Turn as Turn,
